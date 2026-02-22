@@ -1,0 +1,3 @@
+kind: wasmer.io/App.v0
+name: nyaeko-san-portfolio
+package: nyaeko-san/portfolio

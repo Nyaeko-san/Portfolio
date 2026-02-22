@@ -1,0 +1,16 @@
+[package]
+name = "nyaeko-san/portfolio"
+version = "0.1.0"
+description = "A website of my stuffs to introduce myself"
+
+[[module]]
+name = "server"
+source = "wasmer/static-server"
+
+[[command]]
+name = "proxy"
+module = "server"
+runner = "https://webc.org/runner/wasi"
+
+[fs]
+"/public" = "dist"
