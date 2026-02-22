@@ -1,0 +1,294 @@
+.home-section {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    background-color: var(--bg-color);
+}
+
+.bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #0f172a;
+    /* Deeper, more professional blue-grey */
+    background-image: radial-gradient(rgba(255, 255, 255, 0.2) 1.5px, transparent 0);
+    /* Increased opacity for visible white dots */
+    background-size: 30px 30px;
+    background-position: -5px -5px;
+    z-index: 0;
+}
+
+.home-container {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: 1.3fr 0.7fr;
+    /* Fixed ratio to prevent shifting */
+    align-items: center;
+    gap: var(--space-lg);
+    width: 100%;
+}
+
+.home-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-width: 0;
+    /* Prevents text from pushing grid */
+}
+
+.home-text-box {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+    margin-bottom: var(--space-lg);
+}
+
+.home-header {
+    display: flex;
+    align-items: baseline;
+    gap: 1rem;
+    flex-wrap: wrap;
+    line-height: 1.2;
+}
+
+.hello-text {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    letter-spacing: 1px;
+    font-size: 23px;
+    text-transform: uppercase;
+}
+
+.name-intro,
+.name-highlight {
+    font-family: 'Poppins', sans-serif;
+    color: var(--text-primary);
+    line-height: 1;
+}
+
+.name-intro {
+    font-weight: 500;
+    font-size: 28px;
+    /* Matching .hello-text */
+    color: var(--text-secondary);
+}
+
+.name-highlight {
+    font-weight: 800;
+    font-size: clamp(48px, 6vw, 84px);
+    /* Keeping the name itself large */
+    letter-spacing: -2px;
+}
+
+.typewriter-text {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    font-size: clamp(40px, 3vw, 76px);
+    margin-top: 40px;
+    margin-bottom: -40px;
+    min-height: 1.5em;
+    display: inline-block;
+    width: 100%;
+    /* Occupation text takes full width to prevent layout jump */
+}
+
+.cursor {
+    display: inline-block;
+    width: 3px;
+    height: 0.9em;
+    background-color: var(--accent-primary);
+    margin-left: 5px;
+    animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+
+    from,
+    to {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+}
+
+.home-cta {
+    display: flex;
+    gap: var(--space-sm);
+    z-index: 2;
+    margin-top: 1.5rem;
+}
+
+/* Uiverse Button Base */
+.btn-uiverse {
+    display: inline-block;
+    padding: 12px 32px;
+    border-radius: 8px;
+    transition: all 0.2s ease-in;
+    position: relative;
+    overflow: hidden;
+    font-size: 18px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    cursor: pointer;
+    z-index: 1;
+    text-transform: capitalize;
+}
+
+.btn-uiverse:before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%) scaleY(1) scaleX(1.25);
+    top: 100%;
+    width: 140%;
+    height: 180%;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    display: block;
+    transition: all 0.5s 0.1s cubic-bezier(0.55, 0, 0.1, 1);
+    z-index: -1;
+}
+
+.btn-uiverse:after {
+    content: "";
+    position: absolute;
+    left: 55%;
+    transform: translateX(-50%) scaleY(1) scaleX(1.45);
+    top: 180%;
+    width: 160%;
+    height: 190%;
+    border-radius: 50%;
+    display: block;
+    transition: all 0.5s 0.1s cubic-bezier(0.55, 0, 0.1, 1);
+    z-index: -1;
+}
+
+.btn-uiverse:hover {
+    color: #ffffff;
+    transform: translateY(-2px);
+}
+
+.btn-uiverse:hover:before {
+    top: -35%;
+    transform: translateX(-50%) scaleY(1.3) scaleX(0.8);
+}
+
+.btn-uiverse:hover:after {
+    top: -45%;
+    transform: translateX(-50%) scaleY(1.3) scaleX(0.8);
+}
+
+/* Works Button - With Brand Gradient */
+.btn-works {
+    color: white;
+    background: transparent;
+    border: 1px solid var(--accent-primary);
+}
+
+.btn-works:after {
+    background: var(--accent-gradient);
+}
+
+.btn-works:hover {
+    border: 1px solid transparent;
+}
+
+.btn-works:hover:before {
+    background: var(--accent-gradient);
+}
+
+.btn-works:hover:after {
+    background: var(--accent-gradient);
+}
+
+/* Contacts Button - Transparent with Black Frame */
+.btn-contacts {
+    color: var(--text-primary);
+    background: transparent;
+    border: 1px solid #111827;
+    /* Dark/Black frame */
+}
+
+.btn-contacts:after {
+    background-color: #111827;
+}
+
+.btn-contacts:hover {
+    border: 1px solid #111827;
+}
+
+.btn-contacts:hover:before {
+    background-color: #111827;
+}
+
+.btn-contacts:hover:after {
+    background-color: #111827;
+}
+
+.home-visual {
+    display: flex;
+    justify-content: flex-end;
+    /* Keep it strictly to the right */
+    align-items: center;
+}
+
+.profile-frame {
+    width: clamp(300px, 45vw, 450px);
+    height: clamp(300px, 45vw, 450px);
+    border-radius: 50%;
+    overflow: hidden;
+    border: 4px solid var(--accent-primary);
+    box-shadow: 0 0 40px rgba(124, 58, 237, 0.2);
+    position: relative;
+    transition: transform var(--transition-smooth);
+    cursor: pointer;
+}
+
+.profile-frame:hover {
+    transform: scale(1.02);
+}
+
+.profile-frame:active {
+    transform: scale(0.98);
+}
+
+.profile-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: scale(1.0);
+    transition: transform var(--transition-smooth);
+}
+
+@media (max-width: 1024px) {
+    .home-container {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: var(--space-md);
+    }
+
+    .home-content {
+        align-items: center;
+    }
+
+    .home-text-box {
+        align-items: center;
+    }
+
+    .home-header {
+        justify-content: center;
+    }
+
+    .home-visual {
+        justify-content: center;
+        margin-top: var(--space-md);
+    }
+}

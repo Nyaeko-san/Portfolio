@@ -1,0 +1,115 @@
+.about {
+    background: var(--bg-surface);
+    position: relative;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: var(--space-lg);
+}
+
+.section-title {
+    font-size: 3rem;
+    margin-bottom: var(--space-xs);
+}
+
+.section-underline {
+    width: 60px;
+    height: 4px;
+    background: var(--accent-gradient);
+    margin: 0 auto;
+    border-radius: 2px;
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-lg);
+    align-items: center;
+}
+
+.about-text {
+    padding: var(--space-md);
+}
+
+.about-text h3 {
+    font-size: 1.8rem;
+    margin-bottom: var(--space-sm);
+    color: var(--accent-primary);
+}
+
+.about-text p {
+    margin-bottom: var(--space-sm);
+    color: var(--text-secondary);
+}
+
+.about-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-sm);
+    margin-top: var(--space-md);
+    text-align: center;
+}
+
+.stat-number {
+    display: block;
+    font-size: 2rem;
+    font-weight: 800;
+    background: var(--accent-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.stat-label {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+}
+
+.about-visual-container {
+    position: relative;
+    padding: var(--space-md);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.about-gif-frame {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    max-width: 500px;
+    background: var(--bg-surface-elevated);
+    padding: 1.5rem;
+    /* The "far from edge" stylish padding */
+    border-radius: 1.5rem;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+    border: 3px solid var(--accent-primary);
+    /* Symmetrical, clean border */
+    transition: all var(--transition-smooth);
+}
+
+.about-gif-frame:hover {
+    transform: translateY(-10px);
+    border-color: var(--accent-secondary);
+    box-shadow: 0 30px 60px rgba(124, 58, 237, 0.2);
+}
+
+.about-gif {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 0.75rem;
+    object-fit: cover;
+}
+
+@media (max-width: 968px) {
+    .about-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .about-image-container {
+        max-width: 500px;
+        margin: 0 auto;
+    }
+}

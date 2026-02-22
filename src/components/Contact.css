@@ -1,0 +1,148 @@
+.contact {
+    background: var(--bg-color);
+}
+
+.contact-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: var(--space-md);
+    padding: var(--space-xl) var(--space-lg);
+    max-width: 900px;
+    margin: 0 auto;
+    border-radius: 2rem;
+}
+
+.contact-info h3 {
+    font-size: 2.8rem;
+    margin-bottom: var(--space-sm);
+    background: var(--accent-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-weight: 800;
+}
+
+.contact-info p {
+    color: var(--text-secondary);
+    margin-bottom: var(--space-lg);
+    font-size: 1.1rem;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.6;
+}
+
+.contact-links {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.2rem;
+}
+
+.contact-item {
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
+.contact-link {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    color: var(--text-primary);
+    font-size: 1rem;
+    font-weight: 600;
+    padding: 0.8rem 2rem;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 3rem;
+    transition: all var(--transition-smooth);
+    letter-spacing: 1px;
+    cursor: default;
+}
+
+.link-icon {
+    opacity: 0.7;
+    transition: opacity var(--transition-fast);
+}
+
+.contact-link:hover .link-icon {
+    opacity: 1;
+}
+
+.contact-link:hover {
+    color: white;
+    background: var(--accent-gradient);
+    transform: translateY(-5px);
+    border-color: transparent;
+    box-shadow: 0 10px 30px rgba(129, 140, 248, 0.3);
+}
+
+/* Popup / Tooltip Styles */
+.contact-popup {
+    position: absolute;
+    bottom: 120%;
+    left: 50%;
+    transform: translateX(-50%) translateY(10px);
+    background: rgba(15, 23, 42, 0.95);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 1rem;
+    padding: 1rem 1.5rem;
+    width: max-content;
+    max-width: 300px;
+    z-index: 100;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+    text-align: center;
+}
+
+.contact-popup::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 8px solid transparent;
+    border-top-color: rgba(15, 23, 42, 0.95);
+}
+
+.contact-item:hover .contact-popup {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+}
+
+.popup-label {
+    font-size: 0.7rem;
+    font-weight: 700;
+    color: var(--accent-primary);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.popup-value {
+    font-size: 0.9rem;
+    color: var(--text-primary);
+    font-weight: 500;
+}
+
+@media (max-width: 768px) {
+    .contact-links {
+        flex-direction: column;
+        width: 100%;
+        max-width: 300px;
+    }
+
+    .contact-link {
+        width: 100%;
+        text-align: center;
+    }
+}
